@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Identity Document Forgery Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Hybrid Graph&ndash;Frequency Deep Learning Framework</h1>
+    <p class="subtitle">Explainable Identity Document Forgery Detection (GAT + DCT-CNN + Grad-CAM)</p>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>1. Upload Document</h2>
+      <input type="file" id="fileInput" accept="image/*">
+      <div class="preview-box">
+        <img id="previewImg" class="preview-img" style="display:none;">
+        <p id="previewPlaceholder">No image selected</p>
+      </div>
+      <button id="detectBtn" class="btn" disabled>Detect Forgery</button>
+      <p id="statusMsg" class="status"></p>
+    </section>
+
+    <section class="card" id="resultCard" style="display:none;">
+      <h2>2. Prediction Result</h2>
+      <div class="result-row">
+        <div class="result-box">
+          <span class="label">Prediction</span>
+          <span id="predictionValue" class="value">-</span>
+        </div>
+        <div class="result-box">
+          <span class="label">Confidence</span>
+          <span id="confidenceValue" class="value">-</span>
+        </div>
+        <div class="result-box">
+          <span class="label">Processing Time</span>
+          <span id="timeValue" class="value">-</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="heatmapCard" style="display:none;">
+      <h2>3. Grad-CAM Explainability</h2>
+      <p class="hint">Highlighted regions show which frequency areas of the document influenced the model's decision.</p>
+      <img id="heatmapImg" class="preview-img">
+    </section>
+
+    <section class="card">
+      <h2>Model Information</h2>
+      <ul class="info-list">
+        <li><strong>Architecture:</strong> DCT + CNN branch (TensorFlow/Keras) fused with a Graph Attention Network branch (PyTorch Geometric)</li>
+        <li><strong>Graph nodes:</strong> Photo, Name, Date of Birth, Signature, QR Code, Document Number</li>
+        <li><strong>Fusion:</strong> Concatenated CNN + GAT features &rarr; Dense classifier</li>
+        <li><strong>Explainability:</strong> Grad-CAM heatmap over the frequency-domain (DCT) image</li>
+        <li><strong>Output classes:</strong> Genuine / Forged</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>University Final Year Project &mdash; Identity Document Forgery Detection System</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

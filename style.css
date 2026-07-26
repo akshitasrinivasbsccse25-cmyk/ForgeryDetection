@@ -1,0 +1,142 @@
+/* Simple, plain white & blue theme suitable for a university project */
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.header {
+  background-color: #0d47a1;
+  color: #ffffff;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0 0 8px 0;
+  font-size: 22px;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #d6e4ff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f5f8ff;
+  border: 1px solid #cfe0ff;
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  color: #0d47a1;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.preview-box {
+  border: 1px dashed #9db8e8;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+  margin: 12px 0;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: #0d47a1;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn:disabled {
+  background-color: #9db8e8;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #093271;
+}
+
+.status {
+  font-size: 14px;
+  color: #0d47a1;
+  min-height: 18px;
+}
+
+.result-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.result-box {
+  flex: 1;
+  min-width: 150px;
+  background-color: #ffffff;
+  border: 1px solid #cfe0ff;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+}
+
+.result-box .label {
+  display: block;
+  font-size: 13px;
+  color: #555555;
+  margin-bottom: 6px;
+}
+
+.result-box .value {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0d47a1;
+}
+
+.hint {
+  font-size: 13px;
+  color: #555555;
+}
+
+.info-list {
+  font-size: 14px;
+  line-height: 1.6;
+  padding-left: 20px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 13px;
+  color: #666666;
+  padding: 16px;
+  border-top: 1px solid #cfe0ff;
+}
